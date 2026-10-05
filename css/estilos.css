@@ -1,0 +1,365 @@
+/* Estilos compartidos: tema oscuro, tablas y formularios como en el práctico. */
+:root {
+    color-scheme: dark;
+    --fondo: #111820;
+    --panel: #1b2530;
+    --borde: #3b4d5f;
+    --texto: #f0f4f8;
+    --secundario: #b8c7d6;
+    --acento: #79d8ed;
+    --decoracion-link: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 32px 20px;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+
+.encabezado, .marca, .cuenta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.encabezado {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.insignia {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border: 2px solid var(--acento);
+    border-radius: 12px;
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--acento);
+}
+
+.institucion, .nombre-sistema {
+    margin: 0;
+}
+
+.institucion {
+    font-size: 13px;
+    color: var(--secundario);
+}
+
+.nombre-sistema {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 0 0 12px;
+}
+
+h2 {
+    font-size: 21px;
+    margin: 0 0 18px;
+}
+
+.etiqueta {
+    color: var(--acento);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 8px;
+}
+
+.texto-secundario, .ayuda {
+    color: var(--secundario);
+}
+
+.acceso {
+    max-width: 420px;
+    margin: 36px auto 48px;
+}
+
+.formulario {
+    display: grid;
+    gap: 10px;
+    margin-top: 26px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #70859a;
+    border-radius: 6px;
+    background: #111b25;
+    color: var(--texto);
+    font: inherit;
+}
+
+.boton {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: var(--acento);
+    color: #10212b;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.boton:hover {
+    background: #a4e7f5;
+    transform: translateY(-5px);
+}
+
+.boton-secundario {
+    background: transparent;
+    color: var(--texto);
+    border-color: #70859a;
+}
+
+.boton-secundario:hover {
+    background: #304354;
+}
+
+:focus-visible {
+    outline: 3px solid #ffe095;
+    outline-offset: 3px;
+}
+
+.ayuda {
+    font-size: 14px;
+}
+
+.alerta {
+    padding: 12px 16px;
+    border: 1px solid #f39898;
+    border-radius: 6px;
+    background: #4b252c;
+    color: #ffe2e2;
+}
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 28px 0 36px;
+}
+
+.tarjeta {
+    padding: 20px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: #15202a;
+}
+
+.tarjeta span {
+    color: var(--secundario);
+}
+
+.tarjeta strong {
+    display: block;
+    font-size: 34px;
+    color: var(--acento);
+    margin-top: 8px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    background: #263746;
+    color: var(--acento);
+}
+
+th, td {
+    padding: 15px 14px;
+    border-bottom: 1px solid var(--borde);
+}
+
+tbody tr:hover {
+    background: #233240;
+}
+
+.estado {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 5px;
+    background: #31485b;
+    color: #e1eef9;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.estado.resuelto {
+    background: #214b3c;
+    color: #b5f2cf;
+}
+
+.estado.en_espera_repuesto {
+    background: #554321;
+    color: #ffe0a0;
+}
+
+.estado.cancelado {
+    background: #453647;
+    color: #edccec;
+}
+
+footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borde);
+    color: var(--secundario);
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 12px;
+    }
+
+    .contenedor {
+        padding: 20px;
+    }
+
+    .indicadores {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .cuenta {
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .acceso {
+        margin: 20px auto;
+    }
+
+}
+
+
+
+/* Módulos: formularios tradicionales, filtros y acciones en tablas. */
+a { 
+    text-decoration: none;
+    transition: all 0.2s ease;
+    color: var(--acento); 
+}
+a :hover{
+    transform: translateY(-5px);
+}
+
+.menu, .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.formulario-edicion {
+    max-width: 650px;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 12px;
+    padding: 18px;
+    margin: 20px 0;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+}
+
+.filtros label { display: block; }
+.filtros input, .filtros select { width: auto; max-width: 100%; margin: 0; }
+.filtros > div { flex: 1 1 160px; }
+.filtros > div input, .filtros > div select { width: 100%; }
+.acciones-tabla { min-width: 220px; }
+.acciones-tabla .boton { padding: 7px 10px; margin: 3px 0; font-size: 14px; }
+.boton-editar { background: #f1bf70; color: #201b11; }
+.boton-editar:hover { background: #ffdaa0; }
+
+.aviso-exito {
+    padding: 12px 16px;
+    background: #214b3c;
+    border: 1px solid #71bb95;
+    border-radius: 6px;
+    color: #c7f8dd;
+}
+
+.ficha {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.ficha dt { color: var(--secundario); font-weight: 600; }
+.ficha dd { margin: 4px 0; overflow-wrap: anywhere; }
+.historial { margin-top: 32px; }
+.registro-historial { border-top: 1px solid var(--borde); padding: 12px 0; }
+.registro-historial h3 { margin: 8px 0; font-size: 18px; }
+.texto-multilinea { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+@media (max-width: 650px) {
+    .ficha { grid-template-columns: 1fr; }
+    .filtros > select { width: 100%; }
+}
+
+/* Impresión sencilla: fondo blanco, sin controles y encabezados de tabla repetidos. */
+@media print {
+    @page { size: A4 landscape; margin: 15mm; }
+    body { background: white; color: black; font-size: 10pt; }
+    .contenedor { width: 100%; max-width: none; margin: 0; padding: 0; background: white; border: 0; box-shadow: none; }
+    .encabezado, .menu, .controles-informe, .aviso-exito, footer { display: none; }
+    .informe, .informe p, .informe h2 { color: black; }
+    .informe .tabla-contenedor { overflow: visible; border: 0; }
+    .informe table { width: 100%; min-width: 0; table-layout: fixed; }
+    .informe th, .informe td { color: black; background: white; border: 1px solid #999; padding: 6px; overflow-wrap: anywhere; }
+    .informe thead { display: table-header-group; }
+    .informe tr { break-inside: avoid; }
+}
