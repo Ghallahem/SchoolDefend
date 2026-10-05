@@ -111,7 +111,3 @@ Administrador y Técnico pueden abrir Informes, elegir Tickets, Incidentes o Inv
 Para guardar: Ctrl + P → Guardar como PDF. Se recomienda A4 horizontal; desactivar los encabezados y pies propios del navegador si aparecen URL o fecha adicional. CSS oculta los controles y usa fondo blanco. No hay biblioteca PDF, JavaScript, framework ni cambios de base. Si el docente exige un archivo PDF generado directamente por PHP, esta opción de impresión deberá revisarse con él.
 
 Verificado: sintaxis PHP y pruebas HTTP de permisos, filtros, fechas inválidas y conservación de equipos inactivos. El usuario confirmó que el informe se ve bien y aplica los filtros correctamente. Para listados más largos, revisar la vista previa antes de guardar.
-
-## Entrega y exposición
-
-Consultar [Guía de entrega](docs/guia_entrega.md): instalación en otra computadora, roles, recorrido de demostración y explicación del código. La revisión final incluyó sintaxis de 33 archivos PHP, esquema de seis tablas y pruebas funcionales de los módulos. Se completó el uso de la variable textoBoton en confirmar_baja.php; el resto del flujo se conserva.
