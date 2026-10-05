@@ -1,6 +1,6 @@
 <?php
 
-// require_onces carga UNA VEZ si no esta cargado antes __DIR__ devuelve la ruta absoluta del archivo
+// require_onces carga UNA VEZ si no esta cargado antes __DIR__ devuelve la ruta absoluta del archivo (editado)
 require_once __DIR__ . '/includes/sesion.php';
 
 $usuario = exigirSesion();
