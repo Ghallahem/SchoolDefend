@@ -164,7 +164,13 @@ require_once __DIR__ . '/../includes/encabezado.php';
     <p class="alerta" role="alert"><?= escapar($mensaje) ?></p>
 <?php else: ?>
     <section class="informe">
-        <h2>SchoolDefend · <?= escapar($tiposInforme[$tipoInforme]) ?></h2>
+        <div class="encabezado-informe">
+            <div>
+                <h2>Informe de <?= escapar($tiposInforme[$tipoInforme]) ?></h2>
+                <p class="institucion-informe">ENS N.º 10 · Gestión IT escolar</p>
+            </div>
+            <img class="logo-informe" src="<?= escapar($rutaBase . 'Imagenes/logo-completo.png') ?>" alt="SchoolDefend">
+        </div>
         <p>Emitido: <?= escapar($fechaEmision) ?> · Por: <?= escapar($usuario['nombre']) ?></p>
         <p><?= escapar($descripcionPeriodo) ?> Estado: <?= escapar($estadoMostrado) ?>.</p>
         <?php if ($tipoInforme === 'inventario'): ?>

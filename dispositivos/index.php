@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . '/../includes/sesion.php';
 require_once __DIR__ . '/opciones.php';
 

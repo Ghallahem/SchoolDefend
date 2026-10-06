@@ -1,20 +1,20 @@
 <?php
+//N: Bloque 1: exigir autenticación y preparar la página principal
 
-// require_onces carga UNA VEZ si no esta cargado antes __DIR__ devuelve la ruta absoluta del archivo
 require_once __DIR__ . '/includes/sesion.php';
 
-$usuario = exigirSesion();
-$pdo = getConexion();
+$usuario = exigirSesion();                             //!: Impide mostrar el inicio cuando no existe una sesión válida.
+$pdo = getConexion();                                  //*: Obtiene la conexión PDO que utilizarán los indicadores y el listado.
 $titulo = 'Inicio';
-$esProfesor = $usuario['rol'] === 'profesor';
+$esProfesor = $usuario['rol'] === 'profesor';          //?: Permite adaptar las consultas y la información visible según el rol.
 
-// Consultar los indicadores según el rol.
+//N: Bloque 2: consultar indicadores personales cuando el usuario es Profesor
+
 if ($esProfesor) {
-
     $descripcionInicio = 'Consultá el resumen de los problemas que reportaste.';
     $tituloListado = 'Mis últimos tickets';
 
-    //Esto contara, todos los tickes que hizo el usuario
+    //N4: El filtro por id_creador evita que el Profesor reciba el resumen de tickets ajenos.
     $sqlResumen = "
         SELECT
             COUNT(*) AS total,
@@ -23,9 +23,9 @@ if ($esProfesor) {
         FROM tickets
         WHERE id_creador = ?";
 
-    $consultaResumen = $pdo->prepare($sqlResumen);
-    $consultaResumen->execute([$usuario['id_usuario']]);
-    $resumen = $consultaResumen->fetch();
+    $consultaResumen = $pdo->prepare($sqlResumen);                    //N4: Prepara la consulta con un marcador para el ID del Profesor.
+    $consultaResumen->execute([$usuario['id_usuario']]);              //N4: Envía el ID separado de la estructura SQL.
+    $resumen = $consultaResumen->fetch();                             //N4: Obtiene los totales como un array asociativo.
 
     $indicadores = [
         'Mis tickets' => $resumen['total'],
@@ -33,53 +33,45 @@ if ($esProfesor) {
         'Mis resueltos' => $resumen['resueltos']
     ];
 } else {
+    //N: Bloque 3: consultar indicadores generales para Administrador y Técnico
+
     $descripcionInicio = 'Consultá la situación de los equipos y la atención de problemas de la escuela.';
     $tituloListado = 'Últimos tickets';
-    
-    //Hace un conteo de los dispositivos activos, de los tickets pendientes y los incidentes abiertos
-    $stats = $pdo->query("
-        SELECT 
-            (SELECT COUNT(*) FROM dispositivos WHERE activo = 1) as dispositivos,
-            (SELECT COUNT(*) FROM tickets WHERE estado NOT IN ('resuelto', 'cancelado')) as pendientes,
-            (SELECT COUNT(*) FROM incidentes WHERE estado <> 'cerrado') as abiertos
-    ")->fetch();
-    //Esto funciona de manera similar a un diccionario de python [clave => valor]
-    $indicadores = [
-            'Dispositivos activos' => $stats['dispositivos'],
-            'Tickets pendientes' => $stats['pendientes'],
-            'Incidentes abiertos' => $stats['abiertos']
-    ];
-    /* Este bloque, hace lo mismo que el de arriba, pero en 3 consulta, en vez de una.
+
+    //N4: query() es adecuada aquí porque estas consultas son fijas y no incorporan datos externos.
     $indicadores = [
         'Dispositivos activos' => $pdo->query("SELECT COUNT(*) FROM dispositivos WHERE activo = 1")->fetchColumn(),
         'Tickets pendientes' => $pdo->query("SELECT COUNT(*) FROM tickets WHERE estado NOT IN ('resuelto', 'cancelado')")->fetchColumn(),
         'Incidentes abiertos' => $pdo->query("SELECT COUNT(*) FROM incidentes WHERE estado <> 'cerrado'")->fetchColumn()
-    ];*/
+    ];
 }
 
-// Aplicar el filtro del Profesor antes de ejecutar la consulta del listado.
+//N: Bloque 4: construir el listado de tickets según el alcance permitido para el rol
+
 $sqlTickets = "
-    SELECT t.id_ticket, t.titulo, t.estado,
-           ub.nombre AS ubicacion
-    FROM tickets t
-    INNER JOIN ubicaciones ub ON t.id_ubicacion = ub.id_ubicacion";
+    SELECT tickets.id_ticket, tickets.titulo, tickets.estado,
+           ubicaciones.nombre AS ubicacion
+    FROM tickets
+    INNER JOIN ubicaciones ON tickets.id_ubicacion = ubicaciones.id_ubicacion";
 
 $parametrosTickets = [];
 
 if ($esProfesor) {
-    //Concatena esta condicion WHERE si el if se cumple.
+    //!: La restricción se aplica en SQL; ocultar filas solamente en HTML no protegería los datos ajenos.
     $sqlTickets .= "
-    WHERE t.id_creador = ?";
+    WHERE tickets.id_creador = ?";
     $parametrosTickets[] = $usuario['id_usuario'];
 }
-//Esto se se concatenara si se cumpre el if o no. LIMIT 5 limita a 5 la cantidad de filas que retornara
+
 $sqlTickets .= "
-    ORDER BY t.fecha_creacion DESC, t.id_ticket DESC
+    ORDER BY tickets.fecha_creacion DESC, tickets.id_ticket DESC
     LIMIT 5";
 
-$consultaTickets = $pdo->prepare($sqlTickets);
-$consultaTickets->execute($parametrosTickets);
-$tickets = $consultaTickets->fetchAll();
+$consultaTickets = $pdo->prepare($sqlTickets);             //N4: Prepara la consulta final, con o sin marcador según el rol.
+$consultaTickets->execute($parametrosTickets);              //N4: Para el Profesor envía su ID; para los demás envía un array vacío.
+$tickets = $consultaTickets->fetchAll();                    //N4: Recupera hasta cinco tickets como una lista de arrays asociativos.
+
+//N: Bloque 5: traducir los estados internos a textos visibles
 
 $nombresEstados = [
     'abierto' => 'Abierto',
@@ -89,38 +81,40 @@ $nombresEstados = [
     'cancelado' => 'Cancelado'
 ];
 
-require_once __DIR__ . '/includes/encabezado.php';
+require_once __DIR__ . '/includes/encabezado.php';          //N1: Genera la estructura HTML compartida y abre el contenido principal.
 ?>
 
+<?php //N: Bloque 6: presentación y acceso directo para crear un ticket. ?>
 <p class="etiqueta">Inicio</p>
 <h1>Bienvenido a SchoolDefend</h1>
+<?php //N3: La descripción y el título del listado fueron definidos por el servidor según el rol autenticado. ?>
 <p class="texto-secundario"><?= $descripcionInicio ?></p>
 <a class="boton" href="tickets/insertar.php">+ Nuevo ticket</a>
 
-<!-- Este bloque genera el segmento de Contadores resumen, que se encuentra arriba de la tabla de ultimos tickets-->
+<?php //N: Bloque 7: mostrar los indicadores calculados para el rol actual. ?>
 <section class="indicadores" aria-label="Resumen">
+    <?php //?: foreach asigna en cada vuelta el nombre del indicador y su cantidad correspondiente. ?>
     <?php foreach ($indicadores as $nombreIndicador => $cantidadRegistros): ?>
         <article class="tarjeta">
+            <?php //*: Codifica el nombre y convierte el total a entero antes de imprimir ambos valores. ?>
             <span><?= escapar($nombreIndicador) ?></span>
             <strong><?= (int) $cantidadRegistros ?></strong>
         </article>
     <?php endforeach; ?>
 </section>
 
+<?php //N: Bloque 8: mostrar los últimos tickets o informar que no existen resultados. ?>
 <section class="seccion">
     <h2><?= $tituloListado ?></h2>
-    <!-- Verifica si $tickets tiene contenido y si se genera la tabla o no -->
+
     <?php if (empty($tickets)): ?>
         <p class="texto-secundario">Todavía no hay tickets para mostrar.</p>
     <?php else: ?>
-
+        <?php //?: tabindex="0" permite recorrer con teclado la tabla cuando necesita desplazamiento horizontal. ?>
         <div class="tabla-contenedor" tabindex="0" role="region" aria-label="Últimos tickets">
-            <!-- Tode este segmento genera la tabla de ultimos tickets -->
             <table>
                 <thead>
                     <tr>
-                        <!-- scope="col" es por accesibilidad de los no videntes 
-                        (especifica al lecto de pantalla, que esto es el encabezado de una columna) -->
                         <th scope="col">N.º</th>
                         <th scope="col">Problema</th>
                         <th scope="col">Ubicación</th>
@@ -128,13 +122,15 @@ require_once __DIR__ . '/includes/encabezado.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Aca se genera el body de la tabla -->
+                    <?php //N3: Cada fila representa un ticket obtenido previamente con fetchAll(). ?>
                     <?php foreach ($tickets as $ticket): ?>
                         <tr>
                             <td><?= (int) $ticket['id_ticket'] ?></td>
+                            <?php //!: El ID se fuerza a entero para la URL y los textos recuperados se codifican para prevenir XSS. ?>
                             <td><a href="tickets/detalle.php?id=<?= (int) $ticket['id_ticket'] ?>"><?= escapar($ticket['titulo']) ?></a></td>
                             <td><?= escapar($ticket['ubicacion']) ?></td>
                             <td>
+                                <?php //?: ?? usa el estado original como alternativa si no existe una traducción en $nombresEstados. ?>
                                 <span class="estado <?= escapar($ticket['estado']) ?>">
                                     <?= escapar($nombresEstados[$ticket['estado']] ?? $ticket['estado']) ?>
                                 </span>
@@ -147,4 +143,4 @@ require_once __DIR__ . '/includes/encabezado.php';
     <?php endif; ?>
 </section>
 
-<?php require_once __DIR__ . '/includes/pie.php'; ?>
+<?php require_once __DIR__ . '/includes/pie.php'; //N1: Cierra el contenido principal y completa el documento HTML. ?>

@@ -47,17 +47,11 @@ body {
     border-bottom: 1px solid var(--borde);
 }
 
-.insignia {
-    display: grid;
-    place-items: center;
+.logo-encabezado {
     width: 58px;
     height: 58px;
+    object-fit: contain;
     flex-shrink: 0;
-    border: 2px solid var(--acento);
-    border-radius: 12px;
-    font-size: 23px;
-    font-weight: 700;
-    color: var(--acento);
 }
 
 .institucion, .nombre-sistema {
@@ -323,6 +317,22 @@ a :hover{
 .boton-editar { background: #f1bf70; color: #201b11; }
 .boton-editar:hover { background: #ffdaa0; }
 
+.encabezado-informe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.institucion-informe {
+    margin: 0;
+    color: var(--secundario);
+}
+
+.logo-informe {
+    display: none;
+}
+
 .aviso-exito {
     padding: 12px 16px;
     background: #214b3c;
@@ -357,6 +367,9 @@ a :hover{
     .contenedor { width: 100%; max-width: none; margin: 0; padding: 0; background: white; border: 0; box-shadow: none; }
     .encabezado, .menu, .controles-informe, .aviso-exito, footer { display: none; }
     .informe, .informe p, .informe h2 { color: black; }
+    .encabezado-informe { align-items: center; margin-bottom: 12px; }
+    .institucion-informe { color: #444; }
+    .logo-informe { display: block; width: 150px; height: 150px; object-fit: contain; }
     .informe .tabla-contenedor { overflow: visible; border: 0; }
     .informe table { width: 100%; min-width: 0; table-layout: fixed; }
     .informe th, .informe td { color: black; background: white; border: 1px solid #999; padding: 6px; overflow-wrap: anywhere; }

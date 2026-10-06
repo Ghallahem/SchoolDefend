@@ -1,0 +1,314 @@
+OK: Sin errores PHP en dispositivos/index.php
+OK: Inventario exige sesión
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso profesor
+OK: Sin errores PHP en usuarios/index.php
+OK: Profesor sin acceso a usuarios/index.php
+OK: Sin errores PHP en usuarios/formulario.php
+OK: Profesor sin acceso a usuarios/formulario.php
+OK: Sin errores PHP en usuarios/baja.php?id=1
+OK: Profesor sin acceso a usuarios/baja.php?id=1
+OK: Sin errores PHP en ubicaciones/index.php
+OK: Profesor sin acceso a ubicaciones/index.php
+OK: Sin errores PHP en ubicaciones/formulario.php
+OK: Profesor sin acceso a ubicaciones/formulario.php
+OK: Sin errores PHP en ubicaciones/baja.php?id=1
+OK: Profesor sin acceso a ubicaciones/baja.php?id=1
+OK: Sin errores PHP en dispositivos/index.php
+OK: Profesor sin acceso a dispositivos/index.php
+OK: Sin errores PHP en dispositivos/formulario.php
+OK: Profesor sin acceso a dispositivos/formulario.php
+OK: Sin errores PHP en dispositivos/baja.php?id=1
+OK: Profesor sin acceso a dispositivos/baja.php?id=1
+OK: Sin errores PHP en dispositivos/detalle.php?id=1
+OK: Profesor sin acceso a dispositivos/detalle.php?id=1
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso tecnico
+OK: Sin errores PHP en dispositivos/index.php
+OK: Técnico accede al inventario
+OK: Sin errores PHP en usuarios/formulario.php
+OK: Técnico no administra usuarios
+OK: Sin errores PHP en ubicaciones/formulario.php
+OK: Técnico no administra ubicaciones
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso admin
+OK: Sin errores PHP en usuarios/index.php
+OK: Administrador accede a usuarios/index.php
+OK: Sin errores PHP en ubicaciones/index.php
+OK: Administrador accede a ubicaciones/index.php
+OK: Sin errores PHP en dispositivos/index.php
+OK: Administrador accede a dispositivos/index.php
+OK: Sin errores PHP en dispositivos/detalle.php?id=5
+OK: Administrador accede a dispositivos/detalle.php?id=5
+OK: Sin errores PHP en dispositivos/formulario.php?id=no
+OK: ID inválido no abre alta
+OK: Sin errores PHP en usuarios/baja.php?id=999999
+OK: Registro inexistente
+OK: Sin errores PHP en usuarios/formulario.php
+OK: Sin errores PHP en usuarios/formulario.php
+OK: Alta usuario
+OK: Sin errores PHP en usuarios/formulario.php
+OK: Sin errores PHP en usuarios/formulario.php
+OK: Usuario duplicado rechazado
+OK: Sin errores PHP en usuarios/formulario.php?id=4
+OK: Sin errores PHP en usuarios/formulario.php?id=4
+OK: Edición usuario sin cambiar contraseña
+OK: Conserva contraseña
+OK: Sin errores PHP en usuarios/formulario.php?id=1
+OK: Sin errores PHP en usuarios/formulario.php?id=1
+OK: No quita último administrador
+OK: Sin errores PHP en usuarios/baja.php?id=1
+OK: Sin errores PHP en usuarios/baja.php?id=1
+OK: No permite autobaja
+OK: Sin errores PHP en usuarios/baja.php?id=2
+OK: Sin errores PHP en usuarios/baja.php?id=2
+OK: No desactiva técnico con pendientes
+OK: Sin errores PHP en usuarios/formulario.php?id=2
+OK: Sin errores PHP en usuarios/formulario.php?id=2
+OK: No cambia técnico ocupado a Profesor
+OK: Sin errores PHP en ubicaciones/formulario.php
+OK: Sin errores PHP en ubicaciones/formulario.php
+OK: Alta ubicación
+OK: Sin errores PHP en ubicaciones/index.php
+OK: Escapa contenido HTML
+OK: Sin errores PHP en ubicaciones/formulario.php
+OK: Sin errores PHP en ubicaciones/formulario.php
+OK: Nombre ubicación duplicado rechazado
+OK: Sin errores PHP en ubicaciones/baja.php?id=1
+OK: Sin errores PHP en ubicaciones/baja.php?id=1
+OK: Bloquea baja de ubicación ocupada
+OK: Sin errores PHP en dispositivos/formulario.php
+OK: Sin errores PHP en dispositivos/formulario.php
+OK: Alta equipo con campos opcionales vacíos
+OK: Sin errores PHP en dispositivos/formulario.php
+OK: Sin errores PHP en dispositivos/formulario.php
+OK: Código duplicado rechazado
+OK: Sin errores PHP en dispositivos/formulario.php?id=6
+OK: Sin errores PHP en dispositivos/formulario.php?id=6
+OK: IP inválida rechazada
+OK: Sin errores PHP en dispositivos/formulario.php?id=6
+OK: Sin errores PHP en dispositivos/formulario.php?id=6
+OK: Edición de equipo
+OK: Normaliza MAC
+OK: Sin errores PHP en dispositivos/index.php?buscar=EQ-PRUEBA
+OK: Buscador de inventario
+OK: Sin errores PHP en dispositivos/baja.php?id=2
+OK: Sin errores PHP en dispositivos/baja.php?id=2
+OK: No da de baja equipo con trabajos pendientes
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Baja exige motivo
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: POST sin token no modifica
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Baja lógica equipo
+OK: Sin errores PHP en dispositivos/index.php?activo=0
+OK: Filtro de inactivos
+OK: Sin errores PHP en usuarios/baja.php?id=4
+OK: Sin errores PHP en usuarios/baja.php?id=4
+OK: Baja usuario sin tareas activas
+OK: Sin errores PHP en ubicaciones/baja.php?id=4
+OK: Sin errores PHP en ubicaciones/baja.php?id=4
+OK: Baja ubicación sin equipos activos
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Reactivación rechaza responsable inactivo
+OK: Sin errores PHP en usuarios/baja.php?id=4
+OK: Sin errores PHP en usuarios/baja.php?id=4
+OK: Reactivar usuario
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Reactivación rechaza ubicación inactiva
+OK: Sin errores PHP en ubicaciones/baja.php?id=4
+OK: Sin errores PHP en ubicaciones/baja.php?id=4
+OK: Reactivar ubicación
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Sin errores PHP en dispositivos/baja.php?id=6
+OK: Reactivar equipo
+OK: Reactivación conserva datos de última baja
+OK: Sin errores PHP en dispositivos/detalle.php?id=5
+OK: Equipo inactivo conserva historial
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso profesor
+OK: Sin errores PHP en tickets/index.php
+OK: Profesor accede a sus tickets
+OK: Sin errores PHP en tickets/index.php
+OK: Listado no muestra reportes ajenos
+OK: Sin errores PHP en tickets/detalle.php?id=3
+OK: No revela detalle ajeno
+OK: Sin errores PHP en tickets/editar.php?id=1
+OK: Profesor no gestiona tickets
+OK: Sin errores PHP en tickets/insertar.php
+OK: Sin errores PHP en tickets/insertar.php
+OK: Profesor crea ticket general
+OK: Servidor fija creador, prioridad y estado
+OK: Sin errores PHP en tickets/detalle.php?id=6
+OK: Detalle escapa reporte
+OK: Sin errores PHP en tickets/insertar.php
+OK: Sin errores PHP en tickets/insertar.php
+OK: Rechaza equipo de otro sector
+OK: Sin errores PHP en tickets/insertar.php
+OK: Sin errores PHP en tickets/insertar.php
+OK: Rechaza equipo dado de baja
+OK: Sin errores PHP en tickets/insertar.php
+OK: Sin errores PHP en tickets/insertar.php
+OK: Reporte con equipo activo
+OK: Sin errores PHP en tickets/insertar.php
+OK: Crear sin token no guarda
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso tecnico
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Técnico toma ticket y cambia prioridad
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: No asigna a Profesor
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Espera exige explicación
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Espera de repuesto
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Retoma atención
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Resolver exige diagnóstico y solución
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Resolución del ticket
+OK: Resolución guarda fecha
+OK: Sin errores PHP en tickets/editar.php?id=6
+OK: Finalizados no se reabren ni editan
+OK: Historial conserva cinco pasos y no intentos inválidos
+OK: Sin errores PHP en tickets/editar.php?id=1
+OK: Sin errores PHP en tickets/editar.php?id=1
+OK: Cancelar exige motivo
+OK: Sin errores PHP en tickets/editar.php?id=1
+OK: Sin errores PHP en tickets/editar.php?id=1
+OK: Cancelación conserva ticket
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso profesor
+OK: Sin errores PHP en tickets/detalle.php?id=6
+OK: Reportante consulta solución e historial
+OK: Sin errores PHP en tickets/index.php?estado=resuelto&buscar=Reporte
+OK: Filtros por estado y búsqueda
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso admin
+OK: Sin errores PHP en incidentes/index.php
+OK: Administrador consulta incidentes
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso profesor
+OK: Sin errores PHP en incidentes/index.php
+OK: Profesor sin acceso a incidentes/index.php
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Profesor sin acceso a incidentes/formulario.php
+OK: Sin errores PHP en incidentes/detalle.php?id=1
+OK: Profesor sin acceso a incidentes/detalle.php?id=1
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso tecnico
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Incidentes exigen token
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Crear incidente sin equipo ni ticket
+OK: Servidor fija estado inicial y creador
+OK: Sin errores PHP en incidentes/detalle.php?id=3
+OK: Detalle escapa descripción
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Incidente no se asigna a Profesor
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Sin errores PHP en incidentes/formulario.php
+OK: No vincula equipo inactivo
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Valida equipo del ticket
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Valida ticket inexistente
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Sin errores PHP en incidentes/formulario.php
+OK: Crea incidente vinculado
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Inicia investigación
+OK: Gestionar conserva reporte original
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: No retrocede desde investigación
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Cerrar exige conclusión
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Cerrar exige acciones
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: Cierra incidente
+OK: Cierre guarda fecha
+OK: Sin errores PHP en incidentes/formulario.php?id=3
+OK: No edita incidente cerrado
+OK: Sin errores PHP en incidentes/index.php?estado=cerrado&buscar=Incidente+prueba
+OK: Filtros permiten consultar cerrado
+OK: Sin errores PHP en incidentes/detalle.php?id=999999
+OK: Incidente inexistente responde 404
+OK: Sin errores PHP en informes/index.php?tipo=inventario&activo=0
+OK: Informe conserva equipos dados de baja
+OK: Sin errores PHP en informes/index.php?tipo=inventario&activo=1
+OK: Informe filtra equipos activos
+OK: Sin errores PHP en informes/index.php?tipo=tickets&desde=2026-09-10&hasta=2026-09-10
+OK: Informe incluye el día final completo
+OK: Sin errores PHP en informes/index.php?tipo=tickets&desde=2026-09-10&hasta=2026-09-10
+OK: Informe excluye fechas fuera del rango
+OK: Sin errores PHP en informes/index.php?tipo=tickets&desde=2026-02-30
+OK: Informe rechaza fecha imposible
+OK: Sin errores PHP en informes/index.php?tipo=tickets&desde=2026-10-01&hasta=2026-09-01
+OK: Informe rechaza período invertido
+OK: Sin errores PHP en informes/index.php?tipo=incidentes&estado=cerrado
+OK: Informe de incidentes cerrados
+OK: Sin errores PHP en informes/index.php?tipo=tickets&estado=inventado
+OK: Informe valida estado
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso profesor
+OK: Sin errores PHP en informes/index.php
+OK: Profesor no accede a informes generales
+OK: Sin errores PHP en index.php
+OK: Sin errores PHP en logout.php
+OK: Sin errores PHP en login.php
+OK: Sin errores PHP en login.php
+OK: Ingreso admin
+OK: Sin errores PHP en informes/index.php
+OK: Administrador accede a informes
+RESULTADO: pruebas completadas sin modificar la base definitiva.

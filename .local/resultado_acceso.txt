@@ -1,0 +1,28 @@
+OK: Inicio exige sesión
+OK: Login y token
+OK: Rechaza contraseña incorrecta
+OK: Rechaza login sin token
+OK: Ingreso Administrador
+OK: Inicio Administrador
+OK: Resumen técnico general
+OK: GET no cierra sesión
+OK: Rechaza cierre sin token válido
+OK: Conserva sesión tras petición inválida
+OK: Cierre Administrador
+OK: Sesión cerrada Administrador
+OK: Ingreso Técnico
+OK: Inicio Técnico
+OK: Resumen técnico general
+OK: GET no cierra sesión
+OK: Rechaza cierre sin token válido
+OK: Conserva sesión tras petición inválida
+OK: Cierre Técnico
+OK: Sesión cerrada Técnico
+OK: Ingreso Profesor
+OK: Inicio Profesor
+OK: Profesor solo ve sus datos
+OK: GET no cierra sesión
+OK: Rechaza cierre sin token válido
+OK: Conserva sesión tras petición inválida
+OK: Cierre Profesor
+OK: Sesión cerrada Profesor
