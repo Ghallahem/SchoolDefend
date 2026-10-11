@@ -14,7 +14,7 @@ function getConexion()
     $servidor = '127.0.0.1';
     $nombreBaseDatos = 'schooldefend';
     $usuarioBaseDatos = 'root';
-    $contrasenaBaseDatos = 'Nissan/Silvia/S15';
+    $contrasenaBaseDatos = '';
 
     try {          #intenta abrir la conexion con la base de datos, si falla, se captura la excepcion y se muestra un mensaje de error
         $pdo = new PDO(
